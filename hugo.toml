@@ -1,0 +1,49 @@
+baseURL = "https://blog.rbby.dev/"
+title = "rbby.dev"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  env = "production"
+  title = "rbby.dev"
+  description = "A clean, minimal blog"
+  author = "rbby"
+
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/rbbydotdev"
+
+[[params.socialIcons]]
+  name = "x"
+  url = "https://x.com/rbbydotdev"
+
+[[menu.main]]
+  identifier = "posts"
+  name = "posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "tags"
+  url = "/tags/"
+  weight = 20
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+  style = "monokai"
