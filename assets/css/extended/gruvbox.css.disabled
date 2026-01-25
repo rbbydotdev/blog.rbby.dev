@@ -249,3 +249,60 @@ button:hover {
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--orange);
 }
+
+/* Syntax Highlighting (Chroma) */
+.chroma { background-color: var(--bg1); }
+.chroma .k { color: var(--red); font-weight: bold; } /* Keyword */
+.chroma .kc { color: var(--purple); } /* Keyword Constant */
+.chroma .kd { color: var(--red); font-weight: bold; } /* Keyword Declaration */
+.chroma .kn { color: var(--aqua); } /* Keyword Namespace */
+.chroma .kp { color: var(--red); } /* Keyword Pseudo */
+.chroma .kr { color: var(--red); } /* Keyword Reserved */
+.chroma .kt { color: var(--yellow); } /* Keyword Type */
+
+.chroma .n { color: var(--fg); } /* Name */
+.chroma .na { color: var(--yellow); } /* Name Attribute */
+.chroma .nb { color: var(--orange); } /* Name Builtin */
+.chroma .nc { color: var(--yellow); } /* Name Class */
+.chroma .nf { color: var(--green); } /* Name Function */
+.chroma .nn { color: var(--fg); } /* Name Namespace */
+.chroma .nv { color: var(--blue); } /* Name Variable */
+
+.chroma .s { color: var(--green); } /* String */
+.chroma .sa { color: var(--green); } /* String Affix */
+.chroma .sb { color: var(--green); } /* String Backtick */
+.chroma .sc { color: var(--purple); } /* String Char */
+.chroma .dl { color: var(--green); } /* String Delimiter */
+.chroma .sd { color: var(--gray); font-style: italic; } /* String Doc */
+.chroma .s2 { color: var(--green); } /* String Double */
+.chroma .se { color: var(--orange); } /* String Escape */
+.chroma .sh { color: var(--green); } /* String Heredoc */
+.chroma .si { color: var(--orange); } /* String Interpol */
+.chroma .sx { color: var(--green); } /* String Other */
+.chroma .sr { color: var(--aqua); } /* String Regex */
+.chroma .s1 { color: var(--green); } /* String Single */
+.chroma .ss { color: var(--purple); } /* String Symbol */
+
+.chroma .m { color: var(--purple); } /* Number */
+.chroma .mb { color: var(--purple); } /* Number Bin */
+.chroma .mf { color: var(--purple); } /* Number Float */
+.chroma .mh { color: var(--purple); } /* Number Hex */
+.chroma .mi { color: var(--purple); } /* Number Integer */
+.chroma .il { color: var(--purple); } /* Number Integer Long */
+.chroma .mo { color: var(--purple); } /* Number Oct */
+
+.chroma .o { color: var(--orange); } /* Operator */
+.chroma .ow { color: var(--red); font-weight: bold; } /* Operator Word */
+
+.chroma .c { color: var(--gray); font-style: italic; } /* Comment */
+.chroma .ch { color: var(--gray); font-style: italic; } /* Comment Hashbang */
+.chroma .cm { color: var(--gray); font-style: italic; } /* Comment Multiline */
+.chroma .c1 { color: var(--gray); font-style: italic; } /* Comment Single */
+.chroma .cs { color: var(--gray); font-style: italic; } /* Comment Special */
+.chroma .cp { color: var(--aqua); } /* Comment Preproc */
+.chroma .cpf { color: var(--gray); font-style: italic; } /* Comment Preproc File */
+
+.chroma .p { color: var(--fg); } /* Punctuation */
+
+.chroma .err { color: var(--red); font-weight: bold; } /* Error */
+.chroma .g { color: var(--fg); } /* Generic */
