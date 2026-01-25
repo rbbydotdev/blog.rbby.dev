@@ -13,7 +13,7 @@ buildExpired = false
   description = "A clean, minimal blog"
   author = "rbby"
 
-  defaultTheme = "auto"
+  defaultTheme = "light"
   disableThemeToggle = false
 
   ShowReadingTime = true

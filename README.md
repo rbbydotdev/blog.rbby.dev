@@ -7,7 +7,7 @@ A clean, minimal Hugo blog with PaperMod theme and Gruvbox colors.
 This blog uses:
 - **Hugo** - Static site generator
 - **PaperMod** - Clean, fast Hugo theme
-- **Gruvbox** - Comfortable color scheme (light & dark modes)
+- **Tokyo Night** - Beautiful color scheme celebrating Tokyo's neon nights (light & dark modes)
 - **IBM Plex Mono** - Monospace font throughout
 
 ## Structure
@@ -65,7 +65,11 @@ Edit `hugo.toml` to change site settings, menu items, social links, etc.
 
 ### Light/Dark Mode Toggle
 
-Click the sun/moon icon in the header to switch between light and dark Gruvbox themes. The selection is saved to your browser's localStorage.
+Click the sun/moon icon in the header to switch between light and dark Tokyo Night themes. The selection is saved to your browser's localStorage.
+
+**Colors:**
+- **Dark Mode**: Deep blues and purples with neon accents
+- **Light Mode**: Clean, bright variant with the same accent colors
 
 ## Clean & Simple
 

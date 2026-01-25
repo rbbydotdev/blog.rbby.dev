@@ -1,0 +1,251 @@
+/* Gruvbox Theme - Light & Dark Modes */
+
+/* Import IBM Plex Mono font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+/* Gruvbox Light (Default) - WHITE BACKGROUND */
+:root {
+    --bg_h: #f9f5d7;
+    --bg:   #fbf1c7;
+    --bg_s: #f2e5bc;
+    --bg1:  #ebdbb2;
+    --bg2:  #d5c4a1;
+    --bg3:  #bdae93;
+    --bg4:  #a89984;
+
+    --fg:  #282828;
+    --fg1: #3c3836;
+    --fg2: #504945;
+    --fg3: #665c54;
+    --fg4: #7c6f64;
+
+    --red:    #9d0006;
+    --green:  #79740e;
+    --yellow: #b57614;
+    --blue:   #076678;
+    --purple: #8f3f71;
+    --aqua:   #427b58;
+    --orange: #af3a03;
+    --gray:   #928374;
+
+    /* PaperMod Variables */
+    --theme: var(--bg_h);
+    --entry: var(--bg);
+    --primary: var(--fg);
+    --secondary: var(--fg2);
+    --tertiary: var(--bg1);
+    --content: var(--fg1);
+    --hljs-bg: var(--bg1);
+    --code-bg: var(--bg1);
+    --border: var(--bg2);
+}
+
+/* Gruvbox Dark - DARK BACKGROUND */
+:root[data-theme="dark"] {
+    --bg_h: #1d2021;
+    --bg:   #282828;
+    --bg_s: #32302f;
+    --bg1:  #3c3836;
+    --bg2:  #504945;
+    --bg3:  #665c54;
+    --bg4:  #7c6f64;
+
+    --fg:  #fbf1c7;
+    --fg1: #ebdbb2;
+    --fg2: #d5c4a1;
+    --fg3: #bdae93;
+    --fg4: #a89984;
+
+    --red:    #fb4934;
+    --green:  #b8bb26;
+    --yellow: #fabd2f;
+    --blue:   #83a598;
+    --purple: #d3869b;
+    --aqua:   #8ec07c;
+    --gray:   #928374;
+    --orange: #fe8019;
+
+    /* PaperMod Variables */
+    --theme: var(--bg_h);
+    --entry: var(--bg);
+    --primary: var(--fg);
+    --secondary: var(--fg2);
+    --tertiary: var(--bg1);
+    --content: var(--fg1);
+    --hljs-bg: var(--bg1);
+    --code-bg: var(--bg1);
+    --border: var(--bg2);
+}
+
+/* Force monospace everywhere */
+body {
+    font-family: 'IBM Plex Mono', 'Fira Code', 'Consolas', monospace !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 700;
+}
+
+pre, code {
+    font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* Colored Headings */
+h1, .post-title {
+    color: var(--orange) !important;
+}
+
+h2, .entry-header h2 {
+    color: var(--yellow) !important;
+}
+
+h3 {
+    color: var(--aqua) !important;
+}
+
+h4 {
+    color: var(--green) !important;
+}
+
+h5 {
+    color: var(--blue) !important;
+}
+
+h6 {
+    color: var(--purple) !important;
+}
+
+/* Links */
+a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+/* Code blocks */
+code {
+    background-color: var(--bg1);
+    color: var(--orange);
+}
+
+pre {
+    border-left: 3px solid var(--aqua);
+}
+
+:not(pre) > code {
+    background-color: var(--bg1);
+    color: var(--orange);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+/* Post entries */
+.post-entry {
+    border-left: 3px solid var(--orange);
+    background-color: var(--bg);
+    border: 1px solid var(--bg2);
+}
+
+.post-entry:hover {
+    border-left-color: var(--yellow);
+    transform: translateX(2px);
+    transition: all 0.2s ease;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 3px solid var(--yellow) !important;
+    background-color: var(--bg1) !important;
+    color: var(--fg2) !important;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* Buttons */
+.button,
+button {
+    background-color: var(--bg1);
+    border: 1px solid var(--bg2);
+    color: var(--fg);
+}
+
+.button:hover,
+button:hover {
+    background-color: var(--bg2);
+    color: var(--orange);
+}
+
+/* Archive colors */
+.archive-year {
+    color: var(--orange) !important;
+}
+
+.archive-month {
+    color: var(--yellow) !important;
+}
+
+.archive-entry {
+    border-left: 2px solid var(--bg2) !important;
+}
+
+.archive-entry:hover {
+    border-left-color: var(--orange) !important;
+}
+
+/* Table of Contents */
+.toc {
+    background-color: var(--bg1) !important;
+    border: 1px solid var(--bg2) !important;
+    border-left: 3px solid var(--purple) !important;
+}
+
+.toc a {
+    color: var(--fg) !important;
+}
+
+.toc a:hover {
+    color: var(--orange) !important;
+}
+
+/* Navigation */
+.nav a {
+    color: var(--fg1) !important;
+}
+
+.nav a:hover {
+    color: var(--orange) !important;
+}
+
+/* Post metadata */
+.post-meta {
+    color: var(--fg2) !important;
+}
+
+/* Social icons */
+.social-icons a {
+    color: var(--fg1) !important;
+}
+
+.social-icons a:hover {
+    color: var(--orange) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--bg_h);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg2);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange);
+}
