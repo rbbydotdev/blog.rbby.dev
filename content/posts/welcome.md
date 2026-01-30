@@ -17,6 +17,10 @@ Welcome to my clean, minimal blog built with Hugo and PaperMod, styled with Gruv
 
 Click the theme toggle icon (☀️/🌙) in the header to switch between light and dark modes!
 
+{{< email-signup >}}
+Join my email list for updates
+{{< /email-signup >}}
+
 ## Code Example
 
 Here's some sample code:

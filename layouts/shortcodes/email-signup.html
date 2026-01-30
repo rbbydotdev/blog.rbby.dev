@@ -1,0 +1,40 @@
+<div class="email-signup-container">
+  <div class="email-signup-content">
+    {{ if .Inner }}
+    <p class="email-signup-text">{{ .Inner | markdownify }}</p>
+    {{ else }}
+    <p class="email-signup-text">Join my email list</p>
+    {{ end }}
+    <form class="email-signup-form"
+      data-api-url="https://script.google.com/macros/s/AKfycbzE9aOHuwZeZHwphDDauHMuAifrdc0ZJ_SBtX0eqkIoAVoQl50SFhZUciSZEcpy7IEocw/exec">
+      <div class="email-signup-input-wrapper">
+        <input type="email" name="email" class="email-signup-input" placeholder="your@email.com" required
+          aria-label="Email address" />
+        <button type="submit" class="email-signup-button">
+          <span class="button-text">Subscribe</span>
+          <span class="button-spinner" style="display: none;">
+            <svg class="spinner" viewBox="0 0 50 50">
+              <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+            </svg>
+          </span>
+          <span class="button-success" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="button-error" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="email-signup-message"></div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/email-signup.js"></script>

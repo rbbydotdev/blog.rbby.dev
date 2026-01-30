@@ -1,0 +1,13 @@
+{
+  "name": "blog.rbby.dev",
+  "version": "1.0.0",
+  "description": "rbby.dev blog built with Hugo",
+  "scripts": {
+    "build": "hugo --minify",
+    "deploy": "hugo --minify && wrangler pages deploy public --project-name=blog-rbby-dev",
+    "dev": "hugo server -D"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

@@ -35,6 +35,10 @@
   --hljs-bg: var(--bg-highlight);
   --code-bg: var(--bg-highlight);
   --border: var(--border);
+
+  --code-bg: var(--bg);
+  --fg: none;
+  --code-block-bg: none;
 }
 
 /* Tokyo Night Dark - DARK BACKGROUND - Softer/Pastel colors */
@@ -414,3 +418,9 @@ button:hover {
 .chroma .g {
   color: var(--fg);
 } /* Generic */
+
+/* :root[data-theme="light"] {
+  .chroma {
+    filter: invert(1);
+  }
+} */
