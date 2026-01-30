@@ -586,3 +586,153 @@ button:hover {
     width: 100%;
   }
 }
+
+/* Newsletter Dialog Styles */
+.newsletter-dialog {
+  padding: 0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  background-color: var(--bg-highlight);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90vw;
+}
+
+.newsletter-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.dialog-content {
+  padding: 1.5rem;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dialog-title {
+  margin: 0;
+  color: var(--blue);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dialog-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.dialog-close:hover {
+  background-color: var(--bg-highlight);
+  color: var(--red);
+}
+
+.dialog-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dialog-description {
+  margin: 0;
+  color: var(--fg-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Dialog form uses same styles as inline form */
+.newsletter-dialog .email-signup-form {
+  margin: 0;
+}
+
+.newsletter-dialog .email-signup-input-wrapper {
+  gap: 0.5rem;
+}
+
+.newsletter-dialog .email-signup-input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Ensure button colors are correct in dialog */
+.newsletter-dialog .email-signup-button {
+  background-color: var(--blue);
+  color: var(--bg);
+}
+
+.newsletter-dialog .email-signup-button:hover:not(:disabled) {
+  background-color: var(--cyan);
+}
+
+.newsletter-dialog .email-signup-button.success {
+  background-color: var(--green);
+}
+
+.newsletter-dialog .email-signup-button.error {
+  background-color: var(--red);
+}
+
+.newsletter-dialog .spinner .path {
+  stroke: var(--bg);
+}
+
+/* Animation for dialog */
+.newsletter-dialog[open] {
+  animation: dialog-fade-in 0.2s ease-out;
+}
+
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive dialog */
+@media (max-width: 600px) {
+  .newsletter-dialog {
+    width: 95vw;
+  }
+
+  .dialog-content {
+    padding: 1.5rem;
+  }
+
+  .dialog-title {
+    font-size: 1.25rem;
+  }
+
+  .newsletter-dialog .email-signup-input-wrapper {
+    flex-direction: column;
+  }
+
+  .newsletter-dialog .email-signup-input,
+  .newsletter-dialog .email-signup-button {
+    width: 100%;
+  }
+}
