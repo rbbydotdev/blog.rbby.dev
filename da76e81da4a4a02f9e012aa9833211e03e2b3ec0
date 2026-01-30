@@ -1,0 +1,23 @@
+layouts/partials/templates/opengraph.html
+  2b958f7fd3564087 1-164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.40",
+  "base_commit_sha": "da76e81da4a4a02f9e012aa9833211e03e2b3ec0",
+  "prompts": {
+    "2b958f7fd3564087": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "49ed4255-ae32-4431-832a-c48049cd51f9",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 181,
+      "total_deletions": 17,
+      "accepted_lines": 164,
+      "overriden_lines": 0
+    }
+  }
+}
