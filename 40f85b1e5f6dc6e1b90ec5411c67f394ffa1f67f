@@ -1,0 +1,23 @@
+.github/workflows/hugo.yml
+  d2e18a769ab1e49b 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.40",
+  "base_commit_sha": "40f85b1e5f6dc6e1b90ec5411c67f394ffa1f67f",
+  "prompts": {
+    "d2e18a769ab1e49b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1948b75a-4044-45db-846e-e12876ac8f6f",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 71,
+      "total_deletions": 0,
+      "accepted_lines": 71,
+      "overriden_lines": 0
+    }
+  }
+}
