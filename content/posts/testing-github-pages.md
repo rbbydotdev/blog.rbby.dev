@@ -2,6 +2,7 @@
 date = '2026-01-30T06:40:00+07:00'
 draft = false
 title = 'Testing GitHub Pages Deployment'
+description = 'Verifying the GitHub Pages deployment with automated builds using Hugo and GitHub Actions for continuous deployment.'
 tags = ['meta', 'deployment']
 +++
 

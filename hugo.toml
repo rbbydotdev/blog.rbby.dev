@@ -6,6 +6,12 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   env = "production"
@@ -48,6 +54,19 @@ buildExpired = false
   name = "newsletter"
   url = "#newsletter-dialog"
   weight = 30
+
+[[menu.main]]
+  identifier = "hire-me"
+  name = "hire me"
+  url = "https://rbby.dev/resume"
+  weight = 40
+
+[[menu.main]]
+  identifier = "rbby.dev"
+  name = "rbby.dev"
+  url = "https://rbby.dev"
+  weight = 50
+
 
 [markup.highlight]
   noClasses = false

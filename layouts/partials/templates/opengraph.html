@@ -17,8 +17,10 @@
       {{- $description := "" }}
       {{- with .Description }}
         {{- $description = printf "%s" (. | plainify | chomp) }}
-      {{- else with .Summary }}
-        {{- $description = printf "%s" (. | plainify | chomp | truncate 150) }}
+      {{- else }}
+        {{- /* Use first paragraph only, strip HTML, limit to 120 chars */ -}}
+        {{- $summary := .Summary | plainify | chomp }}
+        {{- $description = printf "%s" ($summary | truncate 120) }}
       {{- end }}
 
       {{- /* Build image with text overlays */ -}}

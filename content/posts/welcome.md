@@ -2,6 +2,7 @@
 date = '2026-01-25T07:06:23+07:00'
 draft = false
 title = 'Welcome to the Blog'
+description = 'A clean, minimal blog built with Hugo and PaperMod, featuring Tokyo Night theme, IBM Plex Mono typography, and fast static site generation.'
 tags = ['meta']
 +++
 
@@ -16,6 +17,7 @@ Welcome to my clean, minimal blog built with Hugo and PaperMod, styled with Gruv
 - **Simple**: No unnecessary complexity
 
 Click the theme toggle icon (☀️/🌙) in the header to switch between light and dark modes!
+
 
 {{< email-signup >}}
 Join my email list for updates
