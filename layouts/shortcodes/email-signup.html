@@ -34,6 +34,11 @@
       </div>
       <div class="email-signup-message"></div>
     </form>
+    {{- if site.Params.socialIcons }}
+    <div class="email-signup-social">
+      {{- partial "social_icons.html" (dict "align" "center") -}}
+    </div>
+    {{- end }}
   </div>
 </div>
 

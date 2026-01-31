@@ -28,7 +28,6 @@
 .email-signup-form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .email-signup-input-wrapper {
@@ -322,7 +321,7 @@
   }
 }
 
-a[title="hire me"]:before {
+a[title="hire me"] span:before {
   content: "";
   position: absolute;
   transform: translateY(15px) translateX(-10px) skew(-18deg, 0deg);
@@ -334,6 +333,7 @@ a[title="hire me"]:before {
 }
 
 a[title="hire me"] {
+  position: relative;
   span {
     color: var(--green);
     text-shadow:
@@ -356,4 +356,59 @@ a[title="hire me"] {
   border-left: 6px solid var(--purple);
   font-style: italic;
   width: calc(100% - 6px);
+}
+
+/* Social Icons in Email Signup */
+.email-signup-social {
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.email-signup-follow-text {
+  margin: 0 0 0.75rem 0;
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-signup-social .social-icons {
+  justify-content: center;
+  gap: 2rem;
+  a {
+    box-shadow: none !important;
+  }
+}
+
+.email-signup-social .social-icons a {
+  transition: all 0.2s ease;
+}
+
+.email-signup-social .social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+/* Social Icons in Post Footer */
+.post-author-social {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-author-social .social-icons {
+  justify-content: center;
+  gap: 2rem;
+}
+
+.post-author-social .social-icons a {
+  transition: all 0.2s ease;
+}
+
+.post-author-social .social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+img[src$="scrn.webp"] {
+  border: 1px solid var(--purple) !important;
 }

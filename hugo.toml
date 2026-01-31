@@ -16,7 +16,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 [params]
   env = "production"
   title = "rbby.dev"
-  description = "A clean, minimal blog"
+  description = "A web dev's blog"
   author = "rbby"
 
   defaultTheme = "light"
@@ -29,6 +29,10 @@ ignoreLogs = ['warning-goldmark-raw-html']
   ShowCodeCopyButtons = true
   ShowWordCount = false
 
+[params.homeInfoParams]
+  Title = "Welcome to rbby.dev"
+  Content = "A web dev's blog"
+
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/rbbydotdev"
@@ -36,6 +40,10 @@ ignoreLogs = ['warning-goldmark-raw-html']
 [[params.socialIcons]]
   name = "x"
   url = "https://x.com/rbbydotdev"
+
+[[params.socialIcons]]
+  name = "bluesky"
+  url = "https://bsky.app/profile/rbby.dev"
 
 [[menu.main]]
   identifier = "posts"
