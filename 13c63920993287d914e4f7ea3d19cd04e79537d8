@@ -1,0 +1,29 @@
+hugo.toml
+  542c7f5d617b709f 32-33,35,44-45,47
+layouts/_default/single.html
+  542c7f5d617b709f 1-70
+layouts/shortcodes/email-signup.html
+  542c7f5d617b709f 37-41
+assets/css/extended/main-extended.css
+  542c7f5d617b709f 360-377,382-400,402-409,414
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.40",
+  "base_commit_sha": "13c63920993287d914e4f7ea3d19cd04e79537d8",
+  "prompts": {
+    "542c7f5d617b709f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77237aac-d3eb-4040-ba08-17397f3b3b92",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 134,
+      "total_deletions": 0,
+      "accepted_lines": 127,
+      "overriden_lines": 4
+    }
+  }
+}
