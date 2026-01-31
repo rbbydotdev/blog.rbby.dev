@@ -82,16 +82,30 @@ git-ai works by storing this ai contribution data in git notes. Git notes are si
 
 To experimentally work towards a developer friendly solution, I wanted to try dropping this tooling into a common point of convergence within collaborative version control workflows; _Github Pull Requests_
 
-### Existing Git‑AI Integrations
+### Existing Git‑AI Integrations with VSCode
 
-git-ai comes with many integrations, and even has an [RFC v3.0](https://github.com/git-ai-project/git-ai/blob/main/specs/git_ai_standard_v3.0.0.md), so other tooling providers may implement it themselves. The vscode integration works very well. AI contributed code is given a gutter highlight, and upon line selectshows the model responsible for said ai generated code, long-hovering provides even more context.
+git-ai comes with many integrations, and even has an [RFC v3.0](https://github.com/git-ai-project/git-ai/blob/main/specs/git_ai_standard_v3.0.0.md), so other tooling providers may implement it themselves. **The VSCode integration** works very well. AI contributed code is given a gutter highlight, and upon line selectshows the model responsible for said ai generated code, long-hovering provides even more context.
 
-<img src="/github-ai-contribution-blame-for-pull-requests/git-ai-vscode-scrn.webp" alt="git ai vscode" title="git ai vscode" width="800">
+<figure>
+  <img src="/github-ai-contribution-blame-for-pull-requests/git-ai-vscode-scrn.webp" alt="git ai vscode" title="git ai vscode" width="800">
+  <figcaption align="center">AI-contributed code highlighted in VSCode using the git-ai extension.</figcaption>
+</figure>
 
 
 ### Extending the GitHub PR Experience
 
 To recreate this editor/code-view highlighting, as well as provide human-vs-ai percentage metering in the Github PR experience, I forked an existing github extended plugin [github-refined](https://github.com/refined-github/refined-github) into [refined-github-ai-pr](https://github.com/rbbydotdev/refined-github-with-ai-pr) This plugin has all the features of the prior, even allowing you to toggle this ai contribution blaming feature on and off in the options (_Be sure to check out the screenshots below_)
+
+
+<figure>
+  <img src="/github-ai-contribution-blame-for-pull-requests/light-scrn.webp" alt="light mode screenshot" title="light mode screenshot" width="800">
+  <figcaption align="center">GitHub PR with AI contribution annotations in light mode.</figcaption>
+</figure>
+
+<figure>
+  <img src="/github-ai-contribution-blame-for-pull-requests/dark-scrn.webp" alt="dark mode screenshot" title="dark mode screenshot" width="800">
+  <figcaption align="center">GitHub PR with AI contribution annotations in dark mode.</figcaption>
+</figure>
 
 ### More on Git-Ai Tooling...
 
@@ -104,10 +118,3 @@ One **Major Caveat** with `refined-github-with-ai-pr`, is that it relies on augm
 
 This plugin serves as a beta and prototype, to fuel the conversation of what working with these new tools might look like; _and I encourage community members to join the conversation._ Maybe github will work towards adding this themselves in the future. Please comment on this post in hackernews or open an issue for [refined-github-ai-pr](https://github.com/rbbydotdev/refined-github-with-ai-pr/issues) I'd love to hear what you're thinking!
 
-## Screenshots
-
-### Refined Github With Ai Plugin:
-
-<img src="/github-ai-contribution-blame-for-pull-requests/light-scrn.webp" alt="light mode screenshot" title="light mode screenshot" width="800">
-
-<img src="/github-ai-contribution-blame-for-pull-requests/dark-scrn.webp" alt="dark mode screenshot" title="dark mode screenshot" width="800">
