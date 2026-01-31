@@ -1,0 +1,29 @@
+content/posts/welcome.md
+  2b958f7fd3564087 5
+content/posts/testing-github-pages.md
+  2b958f7fd3564087 5
+archetypes/default.md
+  2b958f7fd3564087 5-6
+layouts/partials/templates/opengraph.html
+  2b958f7fd3564087 20-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.40",
+  "base_commit_sha": "057acd96d2d6aacab32834f6df84cae91c6098f1",
+  "prompts": {
+    "2b958f7fd3564087": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "49ed4255-ae32-4431-832a-c48049cd51f9",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 2,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    }
+  }
+}
