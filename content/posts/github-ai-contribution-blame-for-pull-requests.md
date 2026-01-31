@@ -2,7 +2,7 @@
 date = '2026-01-31T17:37:25+07:00'
 draft = false 
 title = 'Github Browser Plugin for Ai Contribution Blame in Pull Requests'
-description = 'A discussion and proof-of-concept for annotating pull requests with human vs AI contribution data using git-ai and a custom GitHub integrated browser plugin.'
+description = 'An extension of Refined GitHub browser plugin for AI contribution tracking capabilities in GitHub pull requests.'
 tags = ["ai-assisted-development", "open-source", "git", "code-review","browser plugin"]
 +++
 
