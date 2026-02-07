@@ -1,7 +1,7 @@
 +++
 date = '2026-02-05T11:18:01+07:00'
-draft = true
-title = 'A Server in Your Browser With Hono'
+draft = false 
+title = 'A Server in Your Browser'
 description = ''
 tags = []
 +++
