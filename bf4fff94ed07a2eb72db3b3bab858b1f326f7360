@@ -1,0 +1,25 @@
+layouts/partials/templates/opengraph.html
+  4a1a5c43f04ffaf3 26-85,95,108
+layouts/partials/templates/twitter_cards.html
+  4a1a5c43f04ffaf3 26-85,95,108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.42",
+  "base_commit_sha": "bf4fff94ed07a2eb72db3b3bab858b1f326f7360",
+  "prompts": {
+    "4a1a5c43f04ffaf3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0d0825c7-4606-4212-87be-a498d483cd0e",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 200,
+      "total_deletions": 80,
+      "accepted_lines": 124,
+      "overriden_lines": 0
+    }
+  }
+}
