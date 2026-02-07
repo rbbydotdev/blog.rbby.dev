@@ -1,0 +1,23 @@
+layouts/partials/templates/twitter_cards.html
+  56ba668f4ddb7f6f 1-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.42",
+  "base_commit_sha": "f4aaf905b1816b4657c11d8f0f73347c454e777c",
+  "prompts": {
+    "56ba668f4ddb7f6f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6a95d771-1590-4447-a5ea-b38440eea766",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 110,
+      "total_deletions": 0,
+      "accepted_lines": 110,
+      "overriden_lines": 0
+    }
+  }
+}
