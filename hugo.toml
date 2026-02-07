@@ -33,6 +33,9 @@ ignoreLogs = ['warning-goldmark-raw-html']
   Title = "Welcome to rbby.dev"
   Content = "A web dev's blog"
 
+[params.social]
+  twitter = "rbbydotdev"
+
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/rbbydotdev"
