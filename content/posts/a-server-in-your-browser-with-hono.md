@@ -2,8 +2,8 @@
 date = '2026-02-05T11:18:01+07:00'
 draft = false 
 title = 'A Server in Your Browser'
-description = ''
-tags = []
+description = 'Achieving optimized background processing in a service worker with fetch and Hono as a typed debuggable RPC'
+tags = ["service-workers", "rpc", "hono", "web-performance"]
 +++
 
 Modern apps often require blocking processing for common features like searching, indexing or image transformations. Often the solution is to push this processing to a web-worker worker, but the interface for web-workers is an awkward postMessage event emitter. 
