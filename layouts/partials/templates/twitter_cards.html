@@ -23,6 +23,66 @@
         {{- $description = printf "%s" ($summary | truncate 120) }}
       {{- end }}
 
+      {{- /* Measure text by rendering to temporary overlay, then calculate positions */ -}}
+      {{- /* Create temporary image with title text to estimate wrapping */ -}}
+      {{- $maxWidth := 1000 }}  {{- /* Available width for text */ -}}
+
+      {{- /* Count words and estimate lines based on word wrapping */ -}}
+      {{- $titleWords := split $title " " }}
+      {{- $titleLines := 1 }}
+      {{- $currentLineLen := 0 }}
+      {{- range $titleWords }}
+        {{- $wordLen := add (len .) 1 }}  {{- /* +1 for space */ -}}
+        {{- $newLineLen := add $currentLineLen $wordLen }}
+        {{- if gt (mul $newLineLen 42) $maxWidth }}  {{- /* 42px per char for 68px font */ -}}
+          {{- $titleLines = add $titleLines 1 }}
+          {{- $currentLineLen = $wordLen }}
+        {{- else }}
+          {{- $currentLineLen = $newLineLen }}
+        {{- end }}
+      {{- end }}
+      {{- $titleBlockHeight := mul $titleLines 78 }}  {{- /* 68px font + 10px linespacing */ -}}
+
+      {{- /* Same for description */ -}}
+      {{- $descBlockHeight := 0 }}
+      {{- if $description }}
+        {{- $descWords := split $description " " }}
+        {{- $descLines := 1 }}
+        {{- $currentLineLen = 0 }}
+        {{- range $descWords }}
+          {{- $wordLen := add (len .) 1 }}
+          {{- $newLineLen := add $currentLineLen $wordLen }}
+          {{- if gt (mul $newLineLen 20) $maxWidth }}  {{- /* 20px per char for 32px font */ -}}
+            {{- $descLines = add $descLines 1 }}
+            {{- $currentLineLen = $wordLen }}
+          {{- else }}
+            {{- $currentLineLen = $newLineLen }}
+          {{- end }}
+        {{- end }}
+        {{- $descBlockHeight = mul $descLines 40 }}  {{- /* 32px font + 8px linespacing */ -}}
+      {{- end }}
+
+      {{- /* Calculate total height and center the group */ -}}
+      {{- $titleDescSpacing := 50 }}
+      {{- $totalHeight := $titleBlockHeight }}
+      {{- if $description }}
+        {{- $totalHeight = add $totalHeight (add $titleDescSpacing $descBlockHeight) }}
+      {{- end }}
+
+      {{- $availableHeight := 370 }}
+      {{- $verticalPadding := div (sub $availableHeight $totalHeight) 2 }}
+
+      {{- /* Calculate final positions */ -}}
+      {{- $titleY := add 150 $verticalPadding }}
+      {{- $descY := add $titleY (add $titleBlockHeight $titleDescSpacing) }}
+
+      {{- /* Safety: prevent overflow */ -}}
+      {{- if gt $totalHeight $availableHeight }}
+        {{- $titleY = 100 }}
+        {{- $titleDescSpacing = 40 }}
+        {{- $descY = add $titleY (add $titleBlockHeight $titleDescSpacing) }}
+      {{- end }}
+
       {{- /* Build image with text overlays */ -}}
       {{- $img := $base }}
 
@@ -32,7 +92,7 @@
         "size" 68
         "linespacing" 10
         "x" 100
-        "y" 150
+        "y" $titleY
         "font" $fontBold
       }}
       {{- $titleFilter := images.Text $title $titleOpts }}
@@ -45,7 +105,7 @@
           "size" 32
           "linespacing" 8
           "x" 100
-          "y" 380
+          "y" $descY
           "font" $fontMedium
         }}
         {{- $descFilter := images.Text $description $descOpts }}

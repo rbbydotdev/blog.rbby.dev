@@ -86,7 +86,9 @@ A service worker as a server in the browser is a good option for background asyn
 
 ## Example
 
-The following is an example which exhibits a simple local image gallery, it converts png/jpgs to webp, storage uses persistent indexedDB, the resulting images are served from the Service Worker with the Cache API for fast load times. A great showcase of how optimized this setup is, try uploading 20-30 png images at once. Not only is the upload and conversion very fast, and the recall on page reload is very quick as well.
+The following is an example which exhibits a simple local image gallery, it converts png/jpgs to webp, storage uses persistent indexedDB, the resulting images are served from the Service Worker with the Cache API for fast load times. The example also implements a typed hono RPC client, which is not very obvious in Hono documentation.
+
+A great showcase of how optimized this setup is, try uploading 20-30 png images at once. Not only is the upload and conversion very fast, and the recall on page reload is very quick as well.
 
 <a alt="Image Gallery Example Github Repo" href="https://github.com/rbbydotdev/sw-images-example">
   <img src="/a-server-in-your-browser-with-hono/sw-images-example.png" />
