@@ -29,6 +29,10 @@ Other points to note:
 - Abort controllers map cleanly to autocomplete search results; each new keydown of a search term cancels the previous request
 - Background resource fetch works transparently; `<img src="/sw/image.webp">` — no `URL.createObjectURL()` and its subsequent lifecycle management needed
 
+{{< email-signup >}}
+Join my email list for updates
+{{< /email-signup >}}
+
 ## Hono routing and typed RPC
 
 For easy routing and "server"-like behavior for our requests, you can use [Hono](https://hono.dev/docs/getting-started/service-worker). Wiring up Hono looks like this:
