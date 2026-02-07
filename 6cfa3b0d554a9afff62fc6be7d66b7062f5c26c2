@@ -1,0 +1,23 @@
+hugo.toml
+  8de1a87667e3f68c 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.42",
+  "base_commit_sha": "6cfa3b0d554a9afff62fc6be7d66b7062f5c26c2",
+  "prompts": {
+    "8de1a87667e3f68c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca2b2b50-1fdd-47bf-ab50-8f2b12698520",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "robby <robby.polana+github@gmail.com>",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 0,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  }
+}
