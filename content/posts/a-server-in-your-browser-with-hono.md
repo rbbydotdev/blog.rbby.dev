@@ -91,6 +91,11 @@ The following is an example that exhibits a simple local image gallery. It conve
 
 As a great showcase of how optimized this setup is, try uploading 20–30 PNG images at once. Not only is the upload and conversion very fast, but the recall on page reload is very quick as well.
 
+### Demo:
+
+[https://rbby.dev/sw-images-example](https://rbby.dev/sw-images-example)
+
+### Repo:
 <a alt="Image Gallery Example Github Repo" href="https://github.com/rbbydotdev/sw-images-example">
   <img src="/a-server-in-your-browser-with-hono/sw-images-example.png" />
 </a>
