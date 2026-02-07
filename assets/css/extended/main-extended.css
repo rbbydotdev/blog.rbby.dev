@@ -324,8 +324,8 @@
 a[title="hire me"] span:before {
   content: "";
   position: absolute;
-  transform: translateY(15px) translateX(-10px) skew(-18deg, 0deg);
-  width: 120px;
+  transform: translateY(15px) translateX(-7px) skew(-18deg, 0deg);
+  width: 113px;
   z-index: -1;
   height: 28px;
   background-color: var(--purple);

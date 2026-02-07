@@ -1,0 +1,60 @@
++++
+date = '2026-02-05T11:18:01+07:00'
+draft = true
+title = 'A Server in Your Browser With Hono'
+description = ''
+tags = []
++++
+
+Modern apps often require blocking processing for common features like searching, indexing or image transformations. Often the solution is to push this processing to a web-worker worker, but the interface for web-workers is an awkward postMessage event emitter. 
+
+[Comlink](https://github.com/GoogleChromeLabs/comlink) can alleviate the pains of this interface, by making method calls across the main->worker boundary transparent, you can call otherwise remote procedures as if they were functions in the main thread - **it works like magic** but it comes with a cost. You expect your wrapped function to behave just as it did in the main thread, but it does not. The mental model can make it hard to debug. Errors and stack traces are confusing. Object serialization and deserialization is opaque 
+
+As web developers, we already have a very familiar RPC model: `fetch`. Service workers let you use that model inside the browser. A service worker is effectively a shared worker scoped to a path, driven by fetch events. Instead of inventing an RPC protocol, you respond to HTTP requests. This turns background work into something that looks like a local server.
+
+What you get for free:
+
+- A familiar request/response, easy to grok mental model, debugging and errors
+- Native AbortController support (request.signal)
+- The Cache API (no DIY LRU)
+- Easy integration with existing tools (TanStack Query, etc.)
+
+Other points to note:
+
+- Usage of File objects are *shared* not copied, so working with large data can be just as efficient as web-workers
+- Abort Controllers map cleanly to auto complete search results, each new keydown of a search term cancels the previous request
+- Background resource fetch works transparently; `<img src="/sw/image.webp">` - no `URL.createObjectURL()` and its subsequent lifecycle management needed
+
+
+Using [Hono](https://hono.dev/docs/getting-started/service-worker), wiring this up is trivial:
+
+```javascript
+	import { Hono } from 'hono'
+	import { fire } from 'hono/service-worker'
+	
+	const app = new Hono().basePath('/sw')
+	app.get('/', (c) => c.text('Hello World'))
+	fire(app)
+```
+
+Now `/sw/*` is effectively an HTTP API running off the main thread.
+
+[You also can get a RPC type safe client when you export your routes type](https://hono.dev/docs/guides/rpc#client), `export type AppType = typeof route`
+
+Hono works well here because it’s small (~18 KB), has good error handling, Zod integration, and can generate a typed RPC client — so your "local server" still has end‑to‑end types.
+
+Requests for large media types like images - `<img>`, can also be cached using the Cached API. Serving large data objects, which may otherwise rely on a IndexedDB query, may be served directly by using the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) Turning an otherwise `500ms` request into a `20ms` one
+
+
+Service Workers can also **stream** responses natively when returning a `Response` whose body is a `ReadableStream`
+
+This is especially compelling for:
+
+- Large downloads
+- Media streaming
+- Progressive image loading
+- On‑the‑fly transforms (compression, encryption, watermarking)
+
+Anecdotally, I found a great use case in [Opal Editor](https://github.com/rbbydotdev/opal) for this, when [zipping a large data set for download](https://github.com/rbbydotdev/opal/blob/0df3af7151fdef2318a9d847fa46bad23d7169b5/src/lib/service-worker/handleDownloadRequest.ts#L70)
+Opal Editor also heavily uses service-worker for async processing, such as handling image storage and retrieval.
+

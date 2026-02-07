@@ -1,0 +1,110 @@
+{{- /* Generate dynamic Twitter card image matching OG image */ -}}
+{{- $twitterImage := "" }}
+
+{{- /* Only generate for pages (not homepage/lists) */ -}}
+{{- if .IsPage }}
+  {{- /* Load base pattern image */ -}}
+  {{- $base := resources.Get "og-base.png" }}
+
+  {{- if $base }}
+    {{- /* Load fonts */ -}}
+    {{- $fontBold := resources.Get "IBMPlexMono-Bold.ttf" }}
+    {{- $fontMedium := resources.Get "IBMPlexMono-Medium.ttf" }}
+
+    {{- if and $fontBold $fontMedium }}
+      {{- /* Get title and description */ -}}
+      {{- $title := printf "%s" (.Title | plainify | chomp) }}
+      {{- $description := "" }}
+      {{- with .Description }}
+        {{- $description = printf "%s" (. | plainify | chomp) }}
+      {{- else }}
+        {{- /* Use first paragraph only, strip HTML, limit to 120 chars */ -}}
+        {{- $summary := .Summary | plainify | chomp }}
+        {{- $description = printf "%s" ($summary | truncate 120) }}
+      {{- end }}
+
+      {{- /* Build image with text overlays */ -}}
+      {{- $img := $base }}
+
+      {{- /* Add title text */ -}}
+      {{- $titleOpts := dict
+        "color" "#7aa2f7"
+        "size" 68
+        "linespacing" 10
+        "x" 100
+        "y" 150
+        "font" $fontBold
+      }}
+      {{- $titleFilter := images.Text $title $titleOpts }}
+      {{- $img = $img.Filter $titleFilter }}
+
+      {{- /* Add description text if exists */ -}}
+      {{- if $description }}
+        {{- $descOpts := dict
+          "color" "#c0caf5"
+          "size" 32
+          "linespacing" 8
+          "x" 100
+          "y" 380
+          "font" $fontMedium
+        }}
+        {{- $descFilter := images.Text $description $descOpts }}
+        {{- $img = $img.Filter $descFilter }}
+      {{- end }}
+
+      {{- /* Add site name in bottom right */ -}}
+      {{- $siteOpts := dict
+        "color" "#7aa2f7"
+        "size" 28
+        "x" 920
+        "y" 570
+        "font" $fontMedium
+      }}
+      {{- $siteFilter := images.Text "blog.rbby.dev" $siteOpts }}
+      {{- $img = $img.Filter $siteFilter }}
+
+      {{- /* Store the generated image */ -}}
+      {{- $twitterImage = $img }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* Output Twitter Card meta tags */ -}}
+{{- if $twitterImage }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ $twitterImage.Permalink }}">
+{{- else }}
+  {{- /* Fallback to cover image if available */ -}}
+  {{- if .Params.cover.image -}}
+    <meta name="twitter:card" content="summary_large_image">
+    {{- if (ne $.Params.cover.relative true) }}
+      <meta name="twitter:image" content="{{ .Params.cover.image | absURL }}">
+    {{- else }}
+      <meta name="twitter:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
+    {{- end}}
+  {{- else }}
+    {{- $images := partial "templates/_funcs/get-page-images" . -}}
+    {{- with index $images 0 -}}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ .Permalink }}">
+    {{- else -}}
+      <meta name="twitter:card" content="summary">
+    {{- end -}}
+  {{- end }}
+{{- end }}
+
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+      <meta name="twitter:site" content="{{ $content }}">
+    {{- end }}
+  {{- end }}
+{{- end }}
