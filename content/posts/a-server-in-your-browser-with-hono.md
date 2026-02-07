@@ -12,6 +12,11 @@ Modern apps often require blocking processing for common features like searching
 
 [Comlink](https://github.com/GoogleChromeLabs/comlink) can alleviate the pains of this interface by making method calls across the main->worker boundary transparent. You can call otherwise remote procedures as if they were functions in the main thread — **it works like magic** — but it comes with a cost. You expect your wrapped function to behave just as it did in the main thread, but it does not. The mental model can make it hard to debug. Errors and stack traces are confusing. Object serialization and deserialization is opaque.
 
+{{< email-signup >}}
+Join my email list for updates
+{{< /email-signup >}}
+
+
 ## Fetch as RPC
 
 As web developers, we already have a very familiar RPC model: `fetch`. Service workers let you use that model inside the browser. A service worker is effectively a shared worker scoped to a path, driven by fetch events. Instead of inventing an RPC protocol, you respond to HTTP requests. This turns background work into something that looks like a local server.
@@ -28,10 +33,6 @@ Other points to note:
 - Usage of File objects is *shared*, not copied, so working with large data can be just as efficient as web workers
 - Abort controllers map cleanly to autocomplete search results; each new keydown of a search term cancels the previous request
 - Background resource fetch works transparently; `<img src="/sw/image.webp">` — no `URL.createObjectURL()` and its subsequent lifecycle management needed
-
-{{< email-signup >}}
-Join my email list for updates
-{{< /email-signup >}}
 
 ## Hono routing and typed RPC
 
