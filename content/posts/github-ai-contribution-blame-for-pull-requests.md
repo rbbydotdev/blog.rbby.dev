@@ -32,7 +32,7 @@ With the proliferation of effortless code‑generating tools like Claude Code, C
 
 ### When AI‑Generated Code Can Be Appropriate
 
-Oftentimes, depending on the preference of the team and project, less consequential and isolated code could warrant a 100% AI contribution. Non‑user‑facing tooling, a private beta feature, or a proof‑of‑concept immediately come to mind. The ability to retroactively see which parts of the codebase were AI contributions, especially in these use cases, could be very valuable. What was tabbed in by Cursor at 3am six months ago could be a part of today’s refactor.
+Oftentimes, depending on the preference of the team and project, less consequential and isolated code could warrant a 100% AI contribution. Non‑user‑facing tooling, a private beta feature, or a proof‑of‑concept immediately come to mind. The ability to retroactively see which parts of the codebase where AI contributions, especially in these use cases, could be very valuable. What was tabbed in by Cursor at 3am six months ago could be a part of today’s refactor.
 
 ### Percentages, Policies, and Maintainer Trust
 

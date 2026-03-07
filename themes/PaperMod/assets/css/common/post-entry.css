@@ -66,6 +66,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+.entry-content p {
+  margin-top: 12px;
+}
 
 .entry-footer {
   color: var(--secondary);
