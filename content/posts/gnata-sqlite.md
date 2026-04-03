@@ -88,7 +88,7 @@ Autocomplete is schema-aware - dot into a field and see its children with types:
 
 ### CodeMirror + React = drop-in editor
 
-CodeMirror is a great fit here: a fast browser editor where you add features as needed-autocomplete, linting, and documentation hints. The `@gnata-sqlite/codemirror` and `@gnata-sqlite/react` packages make integration straightforward.
+CodeMirror is a great fit here: a fast browser editor where you add features as needed-autocomplete, linting, and documentation hints. The [`@gnata-sqlite/codemirror`](https://github.com/rbbydotdev/gnata-sqlite/tree/main/codemirror) and [`@gnata-sqlite/react`](https://github.com/rbbydotdev/gnata-sqlite/tree/main/react) packages make integration straightforward.
 
 A simple transform:
 
