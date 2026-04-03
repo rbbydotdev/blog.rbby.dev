@@ -6,7 +6,11 @@ description = 'JSONata for SQLite - a Go extension, TinyGo WASM LSP, and CodeMir
 tags = ["sqlite", "jsonata", "go", "wasm", "codemirror", "react"]
 +++
 
+<div style="text-align: center">
+
 **[Playground](https://rbby.dev/gnata-sqlite/playground)** · **[Docs](https://rbby.dev/gnata-sqlite/)** · **[GitHub](https://github.com/rbbydotdev/gnata-sqlite)**
+
+</div>
 
 <a alt="gnata-sqlite playground" href="https://rbby.dev/gnata-sqlite/playground">
 <img src="/gnata-sqlite/og-image.png" alt="Gnata SQLite" width="720" />
