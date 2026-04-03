@@ -1,7 +1,7 @@
 +++
 date = '2026-04-02T12:00:00+07:00'
 draft = false 
-title = 'Gnata-SQLite won't save you $500K/yr, but it might be fun'
+title = "Gnata-SQLite won't save you $500K/yr, but it might be fun"
 description = 'JSONata for SQLite - a Go extension, TinyGo WASM LSP, and CodeMirror editor with React integration'
 tags = ["sqlite", "jsonata", "go", "wasm", "codemirror", "react"]
 +++
