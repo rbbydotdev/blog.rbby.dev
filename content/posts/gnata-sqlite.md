@@ -74,7 +74,7 @@ SELECT jsonata_query('{
 
 ### A tiny LSP for the browser
 
-For the end-user experience, a rich editor was essential: schema awareness, hover hints, and autocomplete. Because of the size of the full Go implementation and potential speed issues, TinyGo was the right choice. It produces a much smaller binary at the cost of fewer runtime features. Here, it is a perfect fit: a WASM LSP with an **85KB** gzipped footprint.
+For the end-user experience, a rich editor was essential: schema awareness, hover hints, and autocomplete. Because of the size of the full Go implementation and potential speed issues, TinyGo was the right choice. It produces a much smaller binary at the cost of fewer runtime features. Here, it is a perfect fit: a WASM LSP with a **145 KB** gzipped footprint.
 
 The LSP can also plug into backend endpoints for autocomplete schema data. This allows the schema to be fetched from the server rather than shipped to the client.
 
