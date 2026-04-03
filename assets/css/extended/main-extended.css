@@ -439,3 +439,10 @@ img[src$="scrn.webp"] {
     text-align: center;
   }
 }
+.post-content h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 70px !important;
+}
