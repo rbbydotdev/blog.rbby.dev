@@ -86,30 +86,11 @@ Autocomplete is schema-aware - dot into a field and see its children with types:
 
 <img src="/gnata-sqlite/autocomplete-crop.png" alt="Autocomplete dropdown showing Name (string) and Order (array) fields" width="560" />
 
-### CodeMirror + React = drop-in editor
+### CodeMirror + React = drop-in editor (the fun part)
 
 CodeMirror is a great fit here: a fast browser editor where you add features as needed-autocomplete, linting, and documentation hints. The [`@gnata-sqlite/codemirror`](https://github.com/rbbydotdev/gnata-sqlite/tree/main/codemirror) and [`@gnata-sqlite/react`](https://github.com/rbbydotdev/gnata-sqlite/tree/main/react) packages make integration straightforward.
 
-A simple transform:
-
-```javascript
-Account.Order.Product.{
-  "name": Description.Colour & " " & Description.Width,
-  "price": Price
-}
-```
-
-Chained pipelines - filter, map, sort, format in one expression:
-
-```javascript
-Account.Order.Product
-  [$price > 50]
-  .{
-    "item":  Description.Colour & " " & Description.Width,
-    "total": $round(Price * Quantity, 2)
-  }
-  ^(>total)
-```
+Having a rich editing experience is essential to frictionless user queries. The goal is to make it easy and fun to explore data with JSONata, without needing to read docs or remember function signatures. The editor does the heavy lifting, so users can focus on asking questions of their data - FUN
 
 ### The optimizer: streaming vs accumulating
 
