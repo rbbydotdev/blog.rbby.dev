@@ -8,7 +8,9 @@ tags = ["sqlite", "jsonata", "go", "wasm", "codemirror", "react"]
 
 **[Playground](https://rbby.dev/gnata-sqlite/playground)** · **[Docs](https://rbby.dev/gnata-sqlite/)** · **[GitHub](https://github.com/rbbydotdev/gnata-sqlite)**
 
+<a alt="gnata-sqlite playground" href="https://rbby.dev/gnata-sqlite/playground">
 <img src="/gnata-sqlite/og-image.png" alt="Gnata SQLite" width="720" />
+</a>
 
 ## Go + JSONata = Gnata / Gnata + SQLite = Gnata-SQLite 
 
