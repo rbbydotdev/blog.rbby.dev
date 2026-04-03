@@ -4,10 +4,8 @@
   "description": "rbby.dev blog built with Hugo",
   "scripts": {
     "build": "hugo --minify",
-    "deploy": "hugo --minify && wrangler pages deploy public --project-name=blog-rbby-dev",
+    "deploy": "echo 'Deploy via git push to master — GitHub Actions handles it.' && exit 1",
     "dev": "hugo server -D"
   },
-  "devDependencies": {
-    "wrangler": "^3.90.0"
-  }
+  "devDependencies": {}
 }
