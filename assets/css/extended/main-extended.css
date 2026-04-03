@@ -412,3 +412,30 @@ a[title="hire me"] {
 img[src$="scrn.webp"] {
   border: 1px solid var(--purple) !important;
 }
+
+#theme-toggle {
+  background: none;
+}
+
+/* Home Avatar */
+.home-info-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-avatar {
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
+  border-radius: 99999px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .home-info-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -30,7 +30,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
   ShowWordCount = false
 
 [params.homeInfoParams]
-  Title = "Welcome to rbby.dev"
+  Title = "Welcome to blog.rbby.dev"
   Content = "A web dev's blog"
 
 [params.social]

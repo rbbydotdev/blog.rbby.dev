@@ -10,13 +10,13 @@ tags = ["sqlite", "jsonata", "go", "wasm", "codemirror", "react"]
 
 <img src="/gnata-sqlite/og-image.png" alt="Gnata SQLite" width="720" />
 
-## Gnata-SQLite won't save you $500K/yr, but it might be fun
+## Go + JSONata = Gnata / Gnata + SQLite = Gnata-SQLite 
 
 Recently, [RecoLabs made the front page of Hacker News](https://news.ycombinator.com/item?id=47536712) with "Saving $500K/yr" by rewriting JSONata from JavaScript to Go with AI. They outline turning an agent loose for **7 hours** and **$400 in tokens** to produce **13,000 lines of Go** passing all **1,778 official JSONata test cases**-starting with the full test suite, then the rest of the codebase.
 
 A static, simple language like Go appears to be a great fit for LLMs. Type errors are caught before runtime, simplicity reduces context blind spots, and the result is a fast executable with far lower memory requirements than a JavaScript runtime.
 
-The project also introduced me to **JSONata**. The dev community has been jaded by end-all query languages like GraphQL. JSONata, by contrast, is *simple yet expressive*-users can do a lot with a little when querying JSON objects. It makes a strong enhancement to any app that needs user-facing data queries, even if it shouldn't be the foundation of an API or RPC layer.
+The project also introduced me to **JSONata**. The dev community has been jaded by end-all query languages like GraphQL. JSONata, by contrast, is *simple yet expressive* - users can do a lot with a little when querying JSON objects. It makes a strong enhancement to any app that needs user-facing data queries, even if it shouldn't be the foundation of an API or RPC layer.
 
 {{< email-signup >}}
 Join my email list for updates
@@ -121,7 +121,8 @@ But not everything can stream. `$sort`, `$reduce`, and `$map` over the full row 
 
 The result is a full-featured toolkit that makes adding powerful query capabilities to any app easy. Thanks to RecoLabs' work, there is now a solid Go JSONata implementation, and Gnata-SQLite wraps it in a CodeMirror editor with simple React integration and strong query support.
 
-You can find some [benchmarks here](https://rbby.dev/gnata-sqlite/docs/explanation/benchmarks), to see how it stacks up against equivelent SQLite queries. 
+You can find some [benchmarks here](https://rbby.dev/gnata-sqlite/docs/explanation/benchmarks), to see how it stacks up against equivalent SQLite queries. Admittedly, some are a little painful. But the goal isn't to beat hand-optimized SQL - it's to give users a **fun**, powerful, flexible way to query their data without needing to write crusty SQL. For that, Gnata-SQLite delivers.
+
 
 ---
 
