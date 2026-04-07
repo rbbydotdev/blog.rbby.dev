@@ -1,0 +1,15 @@
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $posts = $posts.ByDate.Reverse -}}
+{{- $list := slice -}}
+{{- range $posts -}}
+  {{- $list = $list | append (dict
+    "title" .Title
+    "url" .Permalink
+    "date" .Date
+    "summary" (.Description | default .Summary | plainify)
+    "readingTime" .ReadingTime
+    "wordCount" .WordCount
+    "tags" .Params.tags
+  ) -}}
+{{- end -}}
+{{- dict "posts" $list | jsonify -}}

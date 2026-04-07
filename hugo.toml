@@ -8,6 +8,9 @@ buildFuture = false
 buildExpired = false
 ignoreLogs = ['warning-goldmark-raw-html']
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
